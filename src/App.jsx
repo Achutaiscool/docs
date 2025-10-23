@@ -2,6 +2,12 @@ import { useState } from "react";
 import Docs from "./Documentation.jsx";
 import { Link, Routes, Route, BrowserRouter } from "react-router-dom";
 import Footer from "./components/Footer.jsx";
+import logo from "./assets/public/logo.png";
+import vscode from "./assets/public/vscode.svg";
+import ws from "./assets/public/WS.svg";
+import pycharm from "./assets/public/PyCharm_Icon.svg";
+import cube from "./assets/public/CUBE_2D_DARK.svg";
+import idea from "./assets/public/IntelliJ_IDEA_Icon.svg";
 
 // Toast component
 function Toast({ message, show }) {
@@ -30,7 +36,8 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <>
+    
       {/* Toast globally visible */}
       <Toast message="Copied to Clipboard!" show={copied} />
 
@@ -41,7 +48,7 @@ function App() {
             <>
               <div className="min-h-screen bg-black text-white">
                 <header className="fixed top-0 inset-x-0 z-50 w-screen flex mx-auto justify-between border-b border-b-gray-800 h-15 backdrop-blur-md">
-                  <img src="/logo.png" alt="" className="h-10 w-auto ml-6 mt-2" />
+                  <img src={logo} alt="" className="h-10 w-auto ml-6 mt-2" />
                   <div className="flex font-inter text-lg px-8">
                     <nav className="flex my-auto">
                       <Link to="/docs" className="font-medium hover:text-red-600">
@@ -151,7 +158,7 @@ function App() {
                     <div className="flex flex-col items-center">
                       <div className="w-20 sm:w-24 md:w-28 lg:w-32 aspect-square rounded-3xl shadow-lg flex items-center justify-center p-2">
                         <img
-                          src="/vscode.svg"
+                          src={vscode}
                           alt="VS Code"
                           className="w-2/3 h-2/3 object-contain"
                         />
@@ -164,7 +171,7 @@ function App() {
                     <div className="flex flex-col items-center">
                       <div className="w-20 sm:w-24 md:w-28 lg:w-32 aspect-square rounded-3xl shadow-lg flex items-center justify-center p-2">
                         <img
-                          src="/WS.svg"
+                          src={ws}
                           alt="WindSurf"
                           className="w-2/3 h-2/3 object-contain"
                         />
@@ -177,7 +184,7 @@ function App() {
                     <div className="flex flex-col items-center">
                       <div className="w-20 sm:w-24 md:w-28 lg:w-32 aspect-square rounded-3xl shadow-lg flex items-center justify-center p-2">
                         <img
-                          src="/PyCharm_Icon.svg"
+                          src={pycharm}
                           alt="PyCharm"
                           className="w-2/3 h-2/3 object-contain"
                         />
@@ -190,7 +197,7 @@ function App() {
                     <div className="flex flex-col items-center">
                       <div className="w-20 sm:w-24 md:w-28 lg:w-32 aspect-square rounded-3xl shadow-lg flex items-center justify-center p-2">
                         <img
-                          src="/CUBE_2D_DARK.svg"
+                          src={cube}
                           alt="Cursor"
                           className="w-2/3 h-2/3 object-contain"
                         />
@@ -203,7 +210,7 @@ function App() {
                     <div className="flex flex-col items-center">
                       <div className="w-20 sm:w-24 md:w-28 lg:w-32 aspect-square rounded-3xl shadow-lg flex items-center justify-center p-2">
                         <img
-                          src="/IntelliJ_IDEA_Icon.svg"
+                          src={idea}
                           alt="IntelliJ IDEA"
                           className="w-2/3 h-2/3 object-contain"
                         />
@@ -221,7 +228,7 @@ function App() {
         />
         <Route path="/docs/*" element={<Docs />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 
